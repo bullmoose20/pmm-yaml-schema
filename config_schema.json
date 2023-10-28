@@ -56,7 +56,7 @@
                 "url": {
                     "type": "string",
                     "format": "uri",
-                    "pattern": "^(https?://)|(.*redacted.*)$"
+                    "pattern": "^(https?)://"
                 },
                 "token": {
                     "type": "string"
@@ -93,7 +93,7 @@
                 "url": {
                     "type": "string",
                     "format": "uri",
-                    "pattern": "^(https?://)|(.*redacted.*)$"
+                    "pattern": "^(https?)://"
                 },
                 "token": {
                     "type": "string"
@@ -147,7 +147,7 @@
                 "url": {
                     "type": "string",
                     "format": "uri",
-                    "pattern": "^(https?://)|(.*redacted.*)$"
+                    "pattern": "^(https?)://"
                 }
             },
             "required": [
@@ -238,15 +238,7 @@
                     "type": "string"
                 },
                 "version": {
-                    "oneOf": [
-                        {
-                            "type": "integer"
-                        },
-                        {
-                            "type": "string",
-                            "pattern": ".*redacted.*"
-                        }
-                    ]
+                    "type": "integer"
                 },
                 "language": {
                     "type": "string"
@@ -274,7 +266,7 @@
                 "url": {
                     "type": "string",
                     "format": "uri",
-                    "pattern": "^(https?://)|(.*redacted.*)$"
+                    "pattern": "^(https?)://"
                 },
                 "token": {
                     "type": "string"
@@ -345,7 +337,7 @@
                 "url": {
                     "type": "string",
                     "format": "uri",
-                    "pattern": "^(https?://)|(.*redacted.*)$"
+                    "pattern": "^(https?)://"
                 },
                 "token": {
                     "type": "string"
@@ -411,7 +403,7 @@
                 "url": {
                     "type": "string",
                     "format": "uri",
-                    "pattern": "^(https?://)|(.*redacted.*)$"
+                    "pattern": "^(https?)://"
                 },
                 "token": {
                     "type": "string"
@@ -472,7 +464,7 @@
                 "url": {
                     "type": "string",
                     "format": "uri",
-                    "pattern": "^(https?://)|(.*redacted.*)$"
+                    "pattern": "^(https?)://"
                 },
                 "token": {
                     "type": "string"
@@ -712,7 +704,7 @@
             "properties": {
                 "pmm": {
                     "type": "string",
-                    "enum": ["aspect","audio_codec","commonsense","content_rating_uk","content_rating_us_movie","content_rating_us_show","direct_play","episode_info","flixpatrol","language_count","languages","mediastinger","network","ratings","resolution","ribbon","runtimes","status","streaming","studio","versions","video_format"]
+                    "enum": ["aspect","audio_codec","commonsense","content_rating_uk","content_rating_us_movie","content_rating_us_show","direct_play","episode_info","language_count","flixpatrol","languages","mediastinger","network","ratings","resolution","ribbon","runtimes","status","streaming","studio","versions","video_format"]
                 },
                 "remove_overlays": {
                     "type": "boolean"
@@ -817,7 +809,7 @@
                 "url": {
                     "type": "string",
                     "format": "uri",
-                    "pattern": "^(https?://)|(.*redacted.*)$"
+                    "pattern": "^(https?)://"
                 },
                 "schedule": {
                     "type": "string"
@@ -1011,7 +1003,6 @@
                 "sonarr_add_all": {
                     "type": "boolean"
                 },
-                "genre_mapper": { "type": "string" },
                 "mass_genre_update": {
                     "type": "string",
                     "enum": ["tmdb","tvdb","imdb","omdb","anidb","anidb_3_0","anidb_2_5","anidb_2_0","anidb_1_5","anidb_1_0","anidb_0_5","mal","lock","unlock","remove","reset"]
@@ -1152,10 +1143,6 @@
                 "addon_position": { "type": "string", "enum": ["left","top","bottom","right"] },
                 "back_align": { "type": "string", "enum": ["left","right","center","top","bottom"] },
                 "back_color": { "type": "string", "pattern": "^\\#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
-                "back_color_airing": { "type": "string", "pattern": "^\\#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
-                "back_color_canceled": { "type": "string", "pattern": "^\\#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
-                "back_color_ended": { "type": "string", "pattern": "^\\#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
-                "back_color_returning": { "type": "string", "pattern": "^\\#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
                 "back_height": { "type": "integer", "exclusiveMinimum": 0 },
                 "back_line_color": { "type": "string", "pattern": "^\\#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{4}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$" },
                 "back_line_width": { "type": "integer", "exclusiveMinimum": 0 },
@@ -1209,7 +1196,7 @@
                 "style": { "type": "string", "enum": ["compact","standard","bigger","round","square","half", "red", "black", "yellow", "gray"] },
                 "text": { "type": "string" },
                 "time_window": { "type": "string", "enum": ["today","yesterday","this_week","last_week","this_month","last_month","this_year","last_year"] },
-                "url": { "type": "string", "format": "uri", "pattern": "^(https?://)|(.*redacted.*)$" },
+                "url": { "type": "string", "format": "uri", "pattern": "^(https?)://" },
                 "use_edition": { "type": "boolean" },
                 "use_lowercase": { "type": "boolean" },
                 "use_resolution": { "type": "boolean" },
@@ -1230,7 +1217,7 @@
                 "^repo_.*$": { "type": "string" },
                 "^text_.*$": { "type": "string" },
                 "^time_window_.*$": { "type": "string", "enum": ["today","yesterday","this_week","last_week","this_month","last_month","this_year","last_year"] },
-                "^url_.*$": { "type": "string", "format": "uri", "pattern": "^(https?://)|(.*redacted.*)$" },
+                "^url_.*$": { "type": "string", "format": "uri", "pattern": "^(https?)://" },
                 "^use_.*$": { "type": "boolean" },
                 "^weight_.*$": { "type": "integer" }
             },
